@@ -1,0 +1,16 @@
+name: YBDesk Build
+
+# Elle çalıştırılır: Actions -> YBDesk Build -> Run workflow
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: ./.github/workflows/flutter-build.yml
+    secrets: inherit
+    with:
+      upload-artifact: true
+      upload-tag: "ybdesk"
